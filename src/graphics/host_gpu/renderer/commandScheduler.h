@@ -46,7 +46,7 @@ public:
 	// (non-blocking: Submit() + BeginNext(), same as CompleteReleaseMemWrite) every
 	// KYTY_DRAW_FLUSH_INTERVAL draws to keep the queue fed instead. Submitting while the GPU is
 	// still executing earlier work is always legal (vkQueueSubmit never waits on prior submissions
-	// completing), so this never blocks the CPU. Defaults to 16, validated against real gameplay --
+	// completing), so this never blocks the CPU. Defaults to 256, tuned against real gameplay --
 	// override via KYTY_DRAW_FLUSH_INTERVAL (0 disables) if a different workload needs retuning:
 	// too small reintroduces per-submit overhead, too large leaves the same idle bubbles this
 	// exists to remove.
